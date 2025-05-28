@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 37 99 235; /* blue-600 */
+    --color-secondary: 13 148 136; /* teal-600 */
+    --color-accent: 249 115 22; /* orange-500 */
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Marker icon colors for the map */
+  .marker-icon-clinic {
+    filter: hue-rotate(0deg); /* Default blue */
+  }
+  
+  .marker-icon-shelter {
+    filter: hue-rotate(200deg); /* Purple */
+  }
+  
+  .marker-icon-legal {
+    filter: hue-rotate(270deg); /* Red */
+  }
+  
+  .marker-icon-food {
+    filter: hue-rotate(100deg); /* Green */
+  }
+  
+  .marker-icon-education {
+    filter: hue-rotate(40deg); /* Yellow */
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Leaflet popup styling */
+.leaflet-popup-content-wrapper {
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+}
+
+.leaflet-popup-content {
+  margin: 0.75rem;
+  min-width: 200px;
+}
+
+.service-popup a.leaflet-popup-close-button {
+  color: #6b7280;
+  padding: 8px 8px 0 0;
+}
+
+.service-popup a.leaflet-popup-close-button:hover {
+  color: #1f2937;
+}
